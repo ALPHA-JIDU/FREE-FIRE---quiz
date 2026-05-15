@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'GFF Latin CdMedium';
+    src: url('../fonts/GFF-Latin-CdMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --primary-dark: #222831;
+    --secondary-dark: #393E46;
+    --accent-bronze: #948979;
+    --accent-cream: #DFD0B8;
+    --pure-white: #fff;
+    --glass-bg: rgba(57, 62, 70, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --icon-glow: rgba(223, 208, 184, 0.6);
+    --success: #00ff88;
+    --error: #ff4757;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GFF Latin CdMedium', 'Segoe UI', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: var(--primary-dark);
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(30, 10%, 80%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(30, 10%, 20%, 0.4) 0px, transparent 50%);
+    color: var(--pure-white);
+    min-height: 100vh;
+    position: relative;
+    touch-action: manipulation;
+    overflow-x: hidden;
+}
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+    background: 
+        linear-gradient(rgba(57, 62, 70, 0) 50%, rgba(34, 40, 49, 0.2) 50%),
+        linear-gradient(90deg, rgba(148, 137, 121, 0.08), rgba(223, 208, 184, 0.03), rgba(255, 255, 255, 0.05));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    opacity: 0.75;
+    z-index: 1;
+}
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+}
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: preloaderFade 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+.preloader-spinner, .spinner {
+    width: clamp(3rem, 12vw, 5rem);
+    height: clamp(3rem, 12vw, 5rem);
+    border: 4px solid rgba(148, 137, 121, 0.3);
+    border-top: 4px solid var(--accent-cream);
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+.preloader-text {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-cream);
+}
+
+@keyframes preloaderFade {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.divider {
+    width: clamp(70%, 85%, 90%);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-bronze), transparent);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.ad-box {
+    width: clamp(250px, 85vw, 300px);
+    height: clamp(200px, 60vw, 250px);
+    max-width: 100%;
+    background: var(--secondary-dark);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 137, 121, 0.4);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 25px 50px -12px rgba(34, 40, 49, 0.7);
+    margin: 0 auto;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(34, 40, 49, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 5vw, 1.25rem);
+}
+
+.popup {
+    background: var(--glass-bg);
+    border: 1px solid rgba(148, 137, 121, 0.4);
+    border-radius: 1.5rem;
+    padding: clamp(1.5rem, 6vw, 2rem);
+    width: 100%;
+    max-width: clamp(300px, 90vw, 350px);
+    text-align: center;
+    box-shadow: 0 0 50px rgba(148, 137, 121, 0.3);
+}
+
+.btn {
+    width: 100%;
+    max-width: 350px;
+    height: 65px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-top: 1rem;
+    background: var(--accent-cream);
+    color: var(--primary-dark);
+}
+
+.exit-btn {
+    background: var(--error);
+    color: #fff;
+}
