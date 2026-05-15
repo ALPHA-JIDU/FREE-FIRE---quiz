@@ -1,0 +1,368 @@
+main {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 450px;
+    padding: 0 clamp(10px, 4vw, 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out 1.5s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-logo {
+    padding-top: clamp(0.5rem, 2vw, 1rem);
+    padding-bottom: clamp(0.25rem, 1vw, 0.5rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo img {
+    width: clamp(200px, 55vw, 260px);
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s;
+    filter: drop-shadow(0 0 20px rgba(223, 208, 184, 0.3));
+}
+
+.hero-logo img:hover {
+    transform: scale(1.05);
+}
+
+.headline {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: linear-gradient(135deg, var(--accent-cream), var(--pure-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.disclaimer-wrapper {
+    width: clamp(75%, 85%, 95%);
+    margin-top: 1.5rem;
+    padding: 1.5px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--accent-bronze), transparent, var(--accent-cream));
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.disclaimer-content {
+    background: var(--secondary-dark);
+    border-radius: 9999px;
+    padding: clamp(0.6rem, 2vw, 0.75rem) clamp(0.8rem, 3vw, 1.2rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.disclaimer-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #ffffffd6;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(148, 137, 121, 0.5));
+}
+
+.disclaimer-text {
+    font-size: clamp(8px, 2vw, 10px);
+    color: var(--accent-cream);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    flex: 1;
+}
+
+.reward-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: clamp(0.5rem, 2vw, 0.75rem);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.reward-card {
+    border-radius: 1rem;
+    padding: clamp(0.8rem, 3vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float 3s ease-in-out infinite;
+    background: var(--glass-bg);
+    border: 1px solid rgba(148, 137, 121, 0.3);
+    min-width: 70px;
+    aspect-ratio: 1;
+    justify-content: center;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.card-number {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    font-weight: 900;
+    color: var(--accent-cream);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.card-label {
+    font-size: clamp(8px, 2.5vw, 10px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent-cream);
+    text-align: center;
+    line-height: 1.1;
+}
+
+.reward-text {
+    margin-top: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: bold;
+    color: var(--accent-cream);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+.ad-section {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.ad-tag {
+    font-size: clamp(9px, 2.5vw, 11px);
+    color: var(--accent-bronze);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.rules-section {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 5vw, 1.5rem);
+    margin-top: 2rem;
+    background: var(--secondary-dark);
+    border: 1px solid rgba(148, 137, 121, 0.2);
+}
+
+.button-74 {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1.2rem;
+    height: clamp(65px, 17vw, 75px);
+    background: var(--accent-cream);
+    border: 2px solid var(--accent-bronze);
+    border-radius: 30px;
+    box-shadow: var(--accent-bronze) 4px 4px 0 0;
+    color: var(--primary-dark) !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: clamp(1.5rem, 4.8vw, 2rem);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button-74:hover {
+    background: var(--pure-white);
+    box-shadow: var(--accent-bronze) 6px 6px 0 0, 0 0 25px rgba(148, 137, 121, 0.4);
+    transform: translateY(-2px);
+}
+
+.button-74:active {
+    box-shadow: var(--accent-bronze) 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+.level-selector-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.level-title {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--accent-cream);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.difficulty-card {
+    padding: 1.2rem 1rem;
+    background: var(--glass-bg);
+    border: 2px solid rgba(148, 137, 121, 0.3);
+    border-radius: 1.5rem;
+    color: var(--accent-cream);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.difficulty-card:hover {
+    background: rgba(223, 208, 184, 0.15);
+    border-color: var(--accent-cream);
+    box-shadow: 0 10px 25px rgba(148, 137, 121, 0.3);
+    transform: translateY(-2px);
+}
+
+.difficulty-card.selected {
+    background: linear-gradient(135deg, var(--accent-cream), var(--pure-white));
+    color: var(--primary-dark) !important;
+    border-color: var(--accent-bronze);
+    box-shadow: 0 0 20px rgba(148, 137, 121, 0.5);
+}
+
+.sticky-ad {
+    position: fixed;
+    bottom: -130px;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    transition: bottom 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0 1rem;
+}
+
+.sticky-content {
+    position: relative;
+    width: 100%;
+    max-width: clamp(280px, 90vw, 320px);
+    background: var(--secondary-dark);
+    border: 1px solid rgba(148, 137, 121, 0.4);
+    border-bottom: none;
+    border-radius: .75rem .75rem 0 0;
+    padding: .5rem .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-sticky {
+    position: absolute;
+    top: -.75rem;
+    right: -.5rem;
+    background: var(--primary-dark);
+    border: 1px solid var(--accent-bronze);
+    color: var(--accent-cream);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: .75rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 2.5rem;
+    margin-bottom: clamp(1rem, 4vw, 2rem);
+    text-align: center;
+    opacity: .7;
+    font-size: clamp(8px, 2vw, 10px);
+    padding: 0 clamp(1rem, 5vw, 2rem);
+}
+
+.footer-divider {
+    width: 100%;
+    max-width: 450px;
+    height: 1px;
+    margin: 2rem auto 1.5rem;
+    background: var(--accent-cream);
+    opacity: 0.9;
+    border: none;
+}
+
+.flinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.flink {
+    color: var(--accent-cream);
+    text-decoration: none;
+    font-size: clamp(9px, 2vw, 11px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding: .4rem .8rem;
+    border: 1px solid rgba(148, 137, 121, .2);
+    border-radius: .75rem;
+    transition: all .3s;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.flink:hover {
+    color: var(--pure-white);
+    background: var(--accent-bronze);
+    border-color: var(--accent-cream);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(148, 137, 121, .3);
+}
