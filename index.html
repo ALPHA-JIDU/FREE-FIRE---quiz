@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#948979">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Battle Royale Quiz</title>
+    
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://www.highperformanceformat.com">
+    <link rel="preload" href="assets/fonts/GFF-Latin-CdMedium.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- CSS (Critical first) -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+        <div class="preloader-text">Loading...</div>
+    </div>
+    
+    <div class="scanlines"></div>
+    
+    <main>
+        <div class="hero-logo">
+            <img src="assets/images/logo.webp" alt="Logo">
+        </div>
+        <div class="divider"></div>
+        <h2 class="headline">Only 5% Players Can Pass This Quiz</h2>
+        
+        <div class="disclaimer-wrapper">
+            <div class="disclaimer-content">
+                <svg class="disclaimer-icon" viewBox="0 -8 528 528" fill="currentColor">
+                    <path d="M264 56Q318 56 364 83 410 110 437 156 464 202 464 256 464 310 437 356 410 402 364 429 318 456 264 456 210 456 164 429 118 402 91 356 64 310 64 256 64 202 91 156 118 110 164 83 210 56 264 56ZM232 144L232 272 296 272 296 144 232 144ZM232 304L232 368 296 368 296 304 232 304Z"></path>
+                </svg>
+                <p class="disclaimer-text">Not affiliated with Free Fire</p>
+            </div>
+        </div>
+
+        <div class="reward-grid">
+            <div class="reward-card" style="animation-delay: 0s;">
+                <div class="card-number">10</div>
+                <span class="card-label">Questions</span>
+            </div>
+            <div class="reward-card" style="animation-delay: .3s;">
+                <div class="card-number">60</div>
+                <span class="card-label">Sec</span>
+            </div>
+            <div class="reward-card" style="animation-delay: .6s;">
+                <div class="card-number">4</div>
+                <span class="card-label">Levels</span>
+            </div>
+        </div>
+        
+        <p class="reward-text">Prove Your Skill</p>
+
+        <div class="ad-section">
+            <span class="ad-tag">Advertisement</span>
+            <div class="ad-box">
+                <script>
+                    atOptions = {
+                        'key': 'f688f773ce3492cbfd5831e1b1c6222c',
+                        'format': 'iframe',
+                        'height': 250,
+                        'width': 300,
+                        'params': {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/f688f773ce3492cbfd5831e1b1c6222c/invoke.js"></script>
+            </div>
+        </div>
+
+        <div class="rules-section">
+            <p>This challenge is inspired by the popular battle royale game Free Fire. Test your knowledge about characters, bundles, gameplay mechanics, and in-game strategies. Only experienced players can score high and prove their expertise.</p>
+        </div>
+
+        <div class="level-selector-section">
+            <div class="level-title">Select Difficulty</div>
+            <div class="divider"></div>
+            <div class="difficulty-grid">
+                <div class="difficulty-card selected" data-level="easy">EASY</div>
+                <div class="difficulty-card" data-level="medium">MEDIUM</div>
+                <div class="difficulty-card" data-level="hard">HARD</div>
+                <div class="difficulty-card" data-level="hardcore">HARDCORE</div>
+            </div>
+            <div id="selectedLevelDisplay">EASY Selected</div>
+        </div>
+
+        <button class="button-74" id="startQuizBtn">Start Challenge</button>
+        
+        <footer>
+            <div class="footer-divider"></div>
+            <p>© 2026 All Rights Reserved</p>
+            <div class="flinks">
+                <a href="#" class="flink" title="Privacy Policy">Privacy</a>
+                <a href="#" class="flink" title="Terms of Service">Terms</a>
+                <a href="#" class="flink" title="Disclaimer">Disclaimer</a>
+                <a href="#" class="flink" title="About Us">About</a>
+                <a href="#" class="flink" title="Sitemap">Sitemap</a>
+                <a href="#" class="flink" title="Contact">Contact</a>
+                <a href="#" class="flink" title="Support">Support</a>
+            </div>
+        </footer>
+    </main>
+
+    <div id="stickyAd" class="sticky-ad">
+        <div class="sticky-content">
+            <button class="close-sticky" id="closeStickyBtn">✕</button>
+            <div style="transform: scale(.9);">
+                <script>
+                    atOptions = {
+                        'key': 'cf98935e71b827c45c756e4614c046fe',
+                        'format': 'iframe',
+                        'height': 50,
+                        'width': 320,
+                        'params': {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/cf98935e71b827c45c756e4614c046fe/invoke.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div id="redirectLayer" class="overlay">
+        <div class="popup">
+            <div class="spinner"></div>
+            <h3 id="popupTitle">Connecting...</h3>
+            <p>Preparing & Redirecting to the Quiz</p>
+            <div class="ad-box" style="margin: 0 auto; width: 300px;">
+                <script>
+                    atOptions = {
+                        'key': 'f688f773ce3492cbfd5831e1b1c6222c',
+                        'format': 'iframe',
+                        'height': 250,
+                        'width': 300,
+                        'params': {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/f688f773ce3492cbfd5831e1b1c6222c/invoke.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
