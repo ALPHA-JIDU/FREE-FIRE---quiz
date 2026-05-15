@@ -1,1 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Battle Royale Quiz - Level Test</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <!-- PRELOADER -->
+        <div class="preloader active" id="preloader">
+            <img src="assets/images/logo.webp" class="logo" alt="Logo">
+            <div class="spinner"></div>
+            <h3 class="pre-title">Verifying Access Token</h3>
+            <p class="pre-text">Authenticating secure session...</p>
+        </div>
 
+        <!-- QUIZ -->
+        <div class="quiz-container" id="quizContainer">
+            <div class="quiz-wrapper">
+                <div class="quiz-header">
+                    <div class="timer-circle">
+                        <span id="timerNumber">60s</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+                <div class="next-btn-container">
+                    <button class="next-btn" id="nextBtn">NEXT</button>
+                    <div class="error-text" id="errorText">SELECT ANSWER FIRST</div>
+                </div>
+                <div class="banner-ad"></div>
+            </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="popup" id="successPopup">
+            <h3 class="popup-title">🎉 Congratulations Elite Player!</h3>
+            <div class="rank-badge" id="rankBadge"></div>
+            <div class="score-display" id="finalScore">0/10</div>
+            <p>You beat <span id="beatPercentage" style="color:var(--success);font-weight:900;">95%</span> of players!</p>
+            <button class="btn" id="restartBtn">Play Again</button>
+            <button class="btn exit-btn" onclick="window.location.href='index.html'">Exit</button>
+        </div>
+
+        <!-- RESTART AD POPUP -->
+        <div class="ad-popup" id="restartAdPopup">
+            <div class="ad-popup-container">
+                <div class="ad-container">
+                    <script>
+                        atOptions={'key':'f688f773ce3492cbfd5831e1b1c6222c','format':'iframe','height':250,'width':300,'params':{}};
+                    </script>
+                    <script src="https://www.highperformanceformat.com/f688f773ce3492cbfd5831e1b1c6222c/invoke.js"></script>
+                </div>
+                <div style="display:flex;gap:1rem;width:100%;margin-top:2rem;flex-wrap:wrap;">
+                    <button class="btn" style="height:60px;font-size:1.4rem;flex:1;" id="continueBtn">CONTINUE</button>
+                    <button class="btn" style="background:var(--error);height:60px;font-size:1.4rem;flex:1;color:white;" onclick="window.location.href='index.html'">HOME</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ERROR -->
+        <div class="popup" id="errorPopup">
+            <h3 class="popup-title" style="color:var(--error);">❌ Access Denied</h3>
+            <p style="text-align:center;margin-bottom:2rem;">Unauthorized Url.</p>
+            <button class="btn exit-btn" onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
+
+        <!-- TIMEOUT -->
+        <div class="popup" id="timeoutPopup">
+            <h3 class="popup-title">⚡ Almost Won!</h3>
+            <p class="motivate-text">You're just one step away from glory!</p>
+            <button class="btn" id="retryBtn">Retry Now</button>
+            <button class="btn exit-btn" onclick="window.location.href='index.html'">Exit</button>
+        </div>
+    </div>
+
+    <!-- Banner Ad Script -->
+    <script>
+        document.querySelector('.banner-ad').innerHTML = `
+            <script>
+                atOptions={'key':'cf98935e71b827c45c756e4614c046fe','format':'iframe','height':50,'width':320,'params':{}};
+            <\/script>
+            <script src="https://www.highperformanceformat.com/cf98935e71b827c45c756e4614c046fe/invoke.js"><\/script>
+        `;
+    </script>
+
+    <!-- JavaScript -->
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/quiz.js"></script>
+</body>
+</html>
